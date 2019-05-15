@@ -1,0 +1,464 @@
+.header
+	&__top
+		background-color: $blue
+		padding: 10px 0
+	&__inner
+		display: flex
+		align-items: center
+		justify-content: space-between
+		flex-wrap: wrap
+	&__list
+		display: flex
+		align-items: center
+		margin: 0 -10px
+		li
+			display: flex
+			align-items: center
+			font-size: 14px
+			&:not(:last-child)
+				margin-right: 15px
+			+hover
+				a
+					color: $red
+		a
+			color: $white
+			transition: color .5s
+		.icon
+			color: $red
+			margin: 0 10px
+	&__main
+		background-color: $lightGray
+		padding: 10px 0
+	&__logo
+		max-width: 110px
+
+.logo
+	flex-shrink: 0
+	a
+		display: block
+	img
+		display: block
+		max-width: 100%
+
+.nav
+	&__list
+		display: flex
+		align-items: center
+		text-transform: uppercase
+	&__item
+		+f(14px, 700)
+		&:not(:last-child)
+			margin-right: 20px
+	a
+		position: relative
+		padding: 2px 8px
+		display: inline-block
+		transition: color .5s
+		&:before
+			content: ''
+			position: absolute
+			top: 100%
+			left: 0
+			width: 100%
+			height: 2px
+			background-color: currentColor
+			transform: scaleX(0)
+			transform-origin: right
+			transition: transform .5s
+		+hover
+			color: $red
+			&:before		
+				transform: scaleX(1)
+				transform-origin: left
+
+// HERO
+.hero
+	&__slider
+		position: relative
+		white-space: nowrap
+		overflow: hidden
+		opacity: 0
+		visibility: hidden
+		transition: opacity .3s, visibility .3s
+		&.slick-initialized
+			white-space: normal
+			overflow: visible
+			opacity: 1
+			visibility: visible
+	&__bg
+		+cover
+		height: calc(100vh - 111px)
+		position: relative
+		&:before
+			content: ''
+			+coverdiv
+			// background-color: rgba($red, 0.3)
+	&__inner
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		height: 100%
+	&__content
+		z-index: 1
+		position: relative
+		display: flex
+		text-align: right
+	&__main
+		padding: 40px
+		background-color: $blue
+		color: $white
+	&__aside
+		background-color: $white
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+	&__title
+		span
+			display: block
+	&__subtitle
+		padding: 0 20px
+
+.dots
+	+circle(8)
+	background-color: $blue
+	transition: background-color .3s, transform .3s
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		+vcenter
+		width: 200%
+		height: 200%
+	.slick-active &
+		background-color: $red
+		transform: scale(1.8)
+.small-dots
+	display: flex
+	width: 100%
+	justify-content: center
+	align-items: center
+	position: absolute
+	bottom: 40px
+	li
+		line-height: 0
+		&:not(:first-child)
+			margin-left: 15px
+			+ms
+				margin-left: 6px
+
+// FEATURES
+.features
+	&__inner
+		display: flex
+	&__left
+		+flex-size(60%)
+	&__right
+		+flex-size(40%)
+	&__list
+		display: flex
+		flex-wrap: wrap
+		margin: -30px 0 -30px -15px
+	&__item
+		width: 50%
+		padding: 30px 15px
+	&__title
+		padding-bottom: 30px
+	&__btn
+		padding-top: 40px
+
+.feature
+	.partners__right &
+		width: calc(50% - 30px)
+		margin: 30px 15px 0 15px
+		padding-bottom: 10px
+		border-bottom: 3px solid #e4e7e9
+	transition: border-color .5s
+	+hover
+		border-color: $red
+		.feature__link
+			padding-left: 60px
+			&:before
+				width: 40px
+	&__icon
+		font-size: 80px
+		line-height: 1
+		color: $red
+	&__title
+		padding-top: 10px
+		padding-bottom: 15px
+	&__link
+		display: inline-block
+		position: relative
+		margin-top: 15px
+		text-transform: uppercase
+		font-size: 13px
+		font-weight: 700
+		transition: padding-left .5s
+		&:before
+			content: ''
+			position: absolute
+			left: 0px
+			top: 50%
+			margin-top: -2px
+			width: 0px
+			height: 3px
+			background: $red
+			// opacity: 0
+			// visibility: hidden
+			transition: width .5s
+	&__number
+
+
+// PARTNERS
+.partners
+	padding-bottom: 100px
+	&__inner
+		display: flex
+		justify-content: space-between
+		+cover
+	&__left
+		+flex-size(60%)
+	&__right
+		+flex-size(40%)
+		padding-left: 20px
+		display: flex
+		flex-wrap: wrap
+	&__list
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		padding-top: 80px
+		margin: -20px
+	&__item
+		width: calc(100%/3 - 40px)
+		margin: 20px
+		height: 77px
+		+contain
+		filter: grayscale(100%)
+		transition: filter .6s, box-shadow .6s
+		+hover
+			filter: grayscale(0)
+			box-shadow: 0px 10px 40px -14px #e72727
+
+// SERVICES
+.services
+	padding-bottom: 80px
+	&__title
+		max-width: 500px
+		margin: 0 auto
+	&__list
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -20px
+		padding-top: 60px
+	&__item
+		width: 50%
+		padding: 20px
+
+.service
+	height: 100%
+	display: flex
+	flex-direction: column
+	+hover
+		.service__img
+			transform: scale(1.1)
+		.service__content
+			background-color: $white
+		.service__title
+			color: $red
+	&__img
+		+cover
+		height: 0
+		padding-bottom: 40%
+		transition: transform .5s
+		&-wrap
+			overflow: hidden
+	&__content
+		flex-grow: 1
+		padding: 30px
+		border: 1px solid rgba($white, 0.3)
+		border-top: none
+		transition: background-color .5s
+	&__title
+		color: $white
+		padding-bottom: 30px
+		transition: color .5s
+
+// TESTIMONIALS
+.testimonials
+	padding: 150px 0
+	&__slider
+		&-wrap
+			margin-top: 80px
+			position: relative
+		.slick-list
+			max-width: 730px
+			margin: 0 auto
+			box-shadow: 0px 40px 91px -37px rgba(231, 39, 39, 0.5)
+
+.testimonial
+	background-color: $red
+	color: $white
+	padding: 70px 100px
+	blockquote
+		font-style: italic
+	p
+		color: $white
+	&__person
+		display: flex
+		align-items: center
+		justify-content: center
+		padding-top: 40px
+	&__img
+		+circle(60)
+		overflow: hidden
+		+cover
+		margin-right: 24px
+	&__info
+		p
+			font-size: 14px
+
+// ARROWS SLIDER
+.arrow-prev, .arrow-next
+	position: absolute
+	top: 50%
+	transform: translateY(-50%)
+	z-index: 1
+	button
+		display: inline-flex
+		color: $white
+		padding: 17px
+		font-size: 16px
+		text-align: center
+		position: relative
+		background-color: $red
+		transition: background-color .5s
+		+hover
+			background-color: $blue
+.arrow-prev
+	left: 0
+	button
+		&:after
+			content: ''
+			position: absolute
+			bottom: 5px
+			left: 5px
+			border-left: 8px solid $white
+			border-right: 8px solid transparent
+			border-bottom: 8px solid $white
+			border-top: 8px solid transparent
+.arrow-next
+	right: 0
+	button
+		&:after
+			content: ''
+			position: absolute
+			bottom: 5px
+			right: 5px
+			border-right: 8px solid $white
+			border-left: 8px solid transparent
+			border-bottom: 8px solid $white
+			border-top: 8px solid transparent
+
+// CONTACT RED
+.contact
+	display: flex
+	align-items: center
+	justify-content: space-between
+	padding: 58px 68px
+	background-color: $red
+	box-shadow: 0px 40px 91px -37px rgba(231, 39, 39, 0.5)
+	position: relative
+	z-index: 1
+	&__content
+		.subtitle
+			padding-bottom: 15px
+		.title
+			line-height: 1
+			font-weight: 400
+
+// FOOTER
+.footer
+	background-color: $blue
+	color: $text
+	padding-top: 150px
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		z-index: -1
+		top: -95px
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: $blue
+	.icon
+		color: $red
+		margin-right: 7px
+	&__list
+		display: flex
+		margin: 0 -15px
+		padding-bottom: 100px
+	&__item
+		width: calc(33.3% - 30px)
+		margin: 0 15px
+	&__title
+		text-transform: uppercase
+		position: relative
+		max-width: 170px
+		margin: 0 auto 30px
+		padding: 20px 0
+		&:before,
+		&:after
+			content: ''
+			height: 18px
+			width: 18px
+			position: absolute
+		&:before
+			right: 0
+			top: 0
+			border-right: 3px solid $red
+			border-top: 3px solid $red
+		&:after
+			left: 0
+			bottom: 0
+			border-left: 3px solid $red
+			border-bottom: 3px solid $red
+	&__address
+		display: flex
+		text-align: center
+		max-width: 220px
+		margin: 0 auto
+		.icon
+			flex-shrink: 0
+			margin-top: 3px
+	&__contacts
+		display: flex
+		flex-direction: column
+		&-item
+			display: flex
+			align-items: center
+			align-self: center
+			transition: color .3s
+			&:not(:first-child)
+				padding-top: 5px
+			&:first-child
+				align-self: flex-start
+			&:last-child
+				align-self: flex-end
+			+hover
+				color: $white
+	&__copy
+		position: relative
+		text-align: right
+		&:before
+			content: ''
+			position: absolute
+			width: 100%
+			height: 1px
+			background-color: $text
+			top: 0
+			left: 0
+		span
+			font-size: 14px
+			text-transform: uppercase

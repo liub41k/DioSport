@@ -1,0 +1,62 @@
+.btn
+	display: inline-block
+	border: none
+	color: #fff
+	text-decoration: none
+	padding: 18px 36px
+	font-size: 13px
+	+roboto
+	text-transform: uppercase
+	font-weight: 700
+	text-align: center
+	position: relative
+	outline: none
+	cursor: pointer
+	transition: background-color .5s, color .5s
+	z-index: 1
+	&:before
+		content: ''
+		position: absolute
+		top: 5px
+		right: 5px
+		bottom: 5px
+		left: 5px
+		border: 1px solid $white
+		transition: background-color .5s
+		z-index: -1
+	&:after
+		content: ''
+		position: absolute
+		bottom: 5px
+		right: 5px
+		border-right: 10px solid $white
+		border-left: 10px solid transparent
+		border-bottom: 10px solid $white
+		border-top: 10px solid transparent
+		transition: border-color .5s
+	&_blue
+		background-color: $blue
+		+hover
+			background-color: $red
+	&_red
+		background-color: $red
+		+hover
+			color: $blue
+			&:before
+				background-color: $white
+			&:after
+				border-right-color: $red
+				border-bottom-color: $red
+	&_white
+		background-color: $white
+		color: $blue
+		+hover
+			color: $white
+			&:before
+				background-color: $red
+			&:after
+				border-right-color: $white
+				border-bottom-color: $white
+		&:after
+			border-right-color: $red
+			border-bottom-color: $red

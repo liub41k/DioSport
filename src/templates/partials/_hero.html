@@ -1,0 +1,45 @@
+<div class="hero">
+	<div class="hero__slider js-hero-slider">
+		{% for item in [
+			{
+				bg: 'cover',
+				text: 'Спортивні покриття',
+				link: ''
+			},
+			{
+				bg: 'shield',
+				text: 'Ігрове обладнання',
+				link: ''
+			},
+			{
+				bg: 'playground',
+				text: 'Дитячі майданчики',
+				link: ''
+			},
+			{
+				bg: 'build',
+				text: 'Спортивне будівництво',
+				link: ''
+			}
+			] %}
+			<div class="hero__slide">
+				<div class="hero__bg" style="background-image: url(./img/{{item.bg}}.jpg)">
+					<div class="hero__inner inner">
+						<div class="hero__content">
+							<div class="hero__main">
+								<h1 class="hero__title title-lg"><span>Діо</span> Спорт</h1>
+							</div>
+							<div class="hero__aside">
+								<div class=""></div>
+								<h3 class="hero__subtitle title-md">{{item.text}}</h2>
+								<div class="hero__btn">
+									<a class="btn btn_blue" href="{{item.link}}">Детальніше</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>

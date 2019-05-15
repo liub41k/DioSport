@@ -1,0 +1,68 @@
+<footer class="footer">
+	<div class="footer__inner inner">
+		<div class="footer__list">
+			{% for item in [
+				{
+					title: 'Наша адреса',
+					text: '03142, м.Київ, пр-т Академіка Паладіна, 32 офіс 422',
+					icon: 'building'
+				},
+				{
+					title: 'Дзвоніть нам',
+					list: [
+					{
+						icon: 'tel',
+						text: '044-580-18-03',
+						link: 'tel:+380445801803'
+					},
+					{
+						icon: 'tel',
+						text: '073-502-74-08',
+						link: 'tel:+380735027408'
+					},
+					{
+						icon: 'tel',
+						text: '067-402-74-08',
+						link: 'tel:+380674027408'
+					}
+					]
+				},
+				{
+					title: 'Пишіть нам',
+					list: [
+						{
+							link: 'https://www.facebook.com/DIOSport.ua/',
+							text: 'facebook',
+							icon: 'facebook'
+						},
+						{
+							link: 'mailto:info@diosport.com.ua',
+							text: 'info@diosport.com.ua',
+							icon: 'mail'
+						}
+					]
+				}
+				] %}
+				<div class="footer__item">
+					<h4 class="footer__title title-sm title-white t-center">{{item.title}}</h4>
+					{% if item.list %}
+					<ul class="footer__contacts">
+						{% for contact in item.list %}
+						<li class="footer__contacts-item">
+							{{mixins.icon(contact.icon)}}
+							<a href="{{contact.link}}" class="footer__link">{{contact.text}}</a>
+						</li>
+						{% endfor %}
+					</ul>
+					{% else %}
+					<div class="footer__address">
+						{{mixins.icon(item.icon)}}
+						<p>{{item.text}}</p>
+					</div>
+					{% endif %}
+				</div>
+			{% endfor %}
+		</div>
+		<p class="footer__copy"><span>ДІО СПОРТ</span> &copy; 2019</p>
+	</div>
+</footer>

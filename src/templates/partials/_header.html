@@ -1,0 +1,80 @@
+<header class="header">
+	<div class="header__top">
+		<div class="header__inner inner">
+			<ul class="header__list">
+				{% for item in [
+					{
+						tel: '044-580-18-03',
+						link: '+380445801803'
+					},
+					{
+						tel: '073-502-74-08',
+						link: '+380735027408'
+					},
+					{
+						tel: '067-402-74-08',
+						link: '+380674027408'
+					}
+					] %}
+					<li>
+						{{mixins.icon('tel')}}
+						<a href="tel:{{item.link}}">{{item.tel}}</a>
+					</li>
+				{% endfor %}
+			</ul>
+			<ul class="header__list">
+				<li>
+					<a href="https://www.facebook.com/DIOSport.ua/" target="_blank">facebook</a>
+					{{mixins.icon('facebook')}}
+				</li>
+				<li>
+					<a href="mailto:info@diosport.com.ua">info@diosport.com.ua</a>
+					{{mixins.icon('mail')}}
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="header__main">
+		<div class="header__inner inner">
+			<h1 class="header__logo logo">
+				<a href="#">
+					<img src="./img/logo.png" alt="DioSport">
+				</a>
+			</h1>
+			<nav class="header__nav nav">
+				<ul class="nav__list">
+					{% for item in [
+						{
+							name: 'Хто ми',
+							link: '#'
+						},
+						{
+							name: 'Портфоліо',
+							link: '#'
+						},
+						{
+							name: 'Що ми вміємо',
+							link: '#'
+						},
+						{
+							name: 'Каталог',
+							link: '#'
+						},
+						{
+							name: 'Новини',
+							link: '#'
+						},
+						{
+							name: 'Контакти',
+							link: '#'
+						}
+						] %}
+						<li class="nav__item">
+							<a href="{{item.link}}">{{item.name}}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>

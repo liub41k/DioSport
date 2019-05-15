@@ -1,0 +1,53 @@
+{% import "partials/_mixins.html" as mixins %}
+{% macro block() %}
+	<div class="partners">
+		<div class="partners__inner inner" style="background-image: url(./img/partners-bg.png)">
+			<div class="partners__left">
+				<h5 class="subtitle">ABOUT OUR COMPANY</h5>
+				<h2 class="partners__title title">Наші партнери</h2>
+				<ul class="partners__list">
+					{% for item in [
+						'logo1',
+						'logo2',
+						'logo3',
+						'logo4',
+						'logo5',
+						'logo6'
+					] %}
+						<li class="partners__item" style="background-image: url(./img/{{item}}.jpg)"></li>
+					{% endfor %}
+				</ul>
+			</div>
+			<ul class="partners__right">
+				{% for item in [
+					{
+						icon: 'value',
+						num: '1000+',
+						text: 'Задоволених Клієнтів'
+					},
+					{
+						icon: 'value',
+						num: '1000+',
+						text: 'Задоволених Клієнтів'
+					},
+					{
+						icon: 'value',
+						num: '1000+',
+						text: 'Задоволених Клієнтів'
+					},
+					{
+						icon: 'value',
+						num: '1000+',
+						text: 'Задоволених Клієнтів'
+					}
+				] %}
+					<li class="feature">
+						<div class="feature__icon">{{mixins.icon(item.icon)}}</div>
+						<div class="feature__number title">{{item.num}}</div>
+						<p>{{item.text}}</p>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+{% endmacro %}

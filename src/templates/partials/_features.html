@@ -1,0 +1,56 @@
+{% import "partials/_mixins.html" as mixins %}
+{% macro block(props) %}
+	<div class="features">
+		<div class="features__inner inner">
+			<div class="features__left">
+				<ul class="features__list">
+					{% for item in [
+						{
+							icon: 'tie',
+							title: 'Професійність',
+							text: 'Експерт на ринку України в будівництві спортивних майданчиків',
+							label: 'Посилання',
+							link: '#'
+						},
+						{
+							icon: 'recommended',
+							title: 'Якість',
+							text: 'Передові технології та професійне розуміння поставлених завдань',
+							label: 'Посилання',
+							link: '#'
+						},
+						{
+							icon: 'shield',
+							title: 'Надійність',
+							text: 'Надійний партнер в роботі з державними та приватними клієнтами',
+							label: 'Посилання',
+							link: '#'
+						},
+						{
+							icon: 'shield',
+							title: 'Надійність',
+							text: 'Надійний партнер в роботі з державними та приватними клієнтами',
+							label: 'Посилання',
+							link: '#'
+						}
+					] %}
+					<li class="features__item feature">
+						<div class="feature__icon">{{mixins.icon(item.icon)}}</div>
+						<h4 class="feature__title title-sm">{{item.title}}</h4>
+						<p>{{item.text}}</p>
+						<a href="{{item.link}}" class="feature__link">{{item.label}}</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="features__right">
+				<h5 class="subtitle">ABOUT OUR COMPANY</h5>
+				<h2 class="features__title title">WE’RE CAREFULLY DELIVERING YOUR HAPPINESS.</h2>
+				<p>Будуємо та облаштовуємо спортивні комплекси, футбольні поля, баскетбольні та волейбольні майданчики, тенісні корти, гімнастичні, ігрові та найкращі майданчики для дітей. Професійно обираємо, поставляємо, монтуємо та беремо на себе подальше обслуговування надійного спортивного інвентарю та необхідного обладнання</p>
+				<div class="features__btn">
+					<a href="#" class="btn btn_red">Дізнатись більше</a>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endmacro %}
