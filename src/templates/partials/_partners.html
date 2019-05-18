@@ -22,28 +22,28 @@
 				{% for item in [
 					{
 						icon: 'value',
-						num: '1000+',
+						num: '1000',
 						text: 'Задоволених Клієнтів'
 					},
 					{
 						icon: 'value',
-						num: '1000+',
+						num: '500',
 						text: 'Задоволених Клієнтів'
 					},
 					{
 						icon: 'value',
-						num: '1000+',
+						num: '100',
 						text: 'Задоволених Клієнтів'
 					},
 					{
 						icon: 'value',
-						num: '1000+',
+						num: '200',
 						text: 'Задоволених Клієнтів'
 					}
 				] %}
 					<li class="feature">
 						<div class="feature__icon">{{mixins.icon(item.icon)}}</div>
-						<div class="feature__number title">{{item.num}}</div>
+						<div class="feature__number title js-counters" data-count='{{item.num}}'>0</div>
 						<p>{{item.text}}</p>
 					</li>
 				{% endfor %}

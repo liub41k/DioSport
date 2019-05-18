@@ -29,8 +29,22 @@
 	&__main
 		background-color: $lightGray
 		padding: 10px 0
+		.header.is-active &
+			position: fixed
+			top: 0
+			left: 0
+			width: 100%
+			z-index: 10
+			box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1)
+			animation: header .5s forwards
 	&__logo
 		max-width: 110px
+// header scroll animation
+@keyframes header
+	0%
+		transform: translateY(-80px)
+	100%
+		transform: translateY(0px)
 
 .logo
 	flex-shrink: 0
@@ -73,6 +87,8 @@
 
 // HERO
 .hero
+	.header.is-active + &
+		padding-top: 72px
 	&__slider
 		position: relative
 		white-space: nowrap
